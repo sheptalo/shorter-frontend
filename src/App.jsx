@@ -16,20 +16,22 @@ function App() {
                     headers: {'Content-Type': 'application/json'}
                 })
         const data = await response.json()
-        setResult(data.uid)
+        setResult(`https://sh.osi.im/${data.uid}`)
 
     }
     return (
         <>
+            <h1>Сокращатель ссылок</h1>
             <form onSubmit={_ => {
                 _.preventDefault();
                 onSubmit()
             }}>
                 <input type="text" value={url} onChange={e => setUrl(e.target.value)}/>
-                <input type="submit" value="Сократить"/>
+                <input type="submit" value="SH.."/>
             </form>
             <div className='result'>
-                <p>Сокращенный url: <span>{result}</span></p>
+                <span>Сокращенный url: </span>
+                <a href={result}>{result}</a>
             </div>
         </>
     )
