@@ -1,53 +1,38 @@
 @font-face {
-  font-family: "Noto Sans Display";
+  font-family: Noto Sans Display;
   src: url("./assets/NotoSansDisplay.ttf");
   font-display: swap
 }
 
 @font-face {
   font-family: Noto Sans Mono;
-  src: url('./assets/NotoSansMono.ttf');
+  src: url("./assets/NotoSansMono.ttf");
   font-display: swap
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  box-sizing: border-box
 }
+
 :root {
-  font-family: "Noto Sans Display", Arial, sans-serif;
+  font-family: Noto Sans Display,Arial,sans-serif;
   font-weight: 500;
-
   color-scheme: light dark;
-  color: #EFE6FA;
-  background-color: #433156;
-
+  color: #FDF4EF;
+  background-color: #2c3343;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale
 }
 
-h1{
-  margin-bottom: 1rem;
-  font-family: "Noto Sans Mono", Arial, sans-serif;
-}
-
-a {
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;
   display: flex;
-  min-height: 100vh;
+  min-height: 100vh
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+
