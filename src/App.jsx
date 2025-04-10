@@ -29,7 +29,7 @@ function App() {
             </form>
             <div className='result'>
                 <span>Результат: </span>
-                <a href={url && result}>{result}</a>
+                <a href={url && `https://${result}`}>{result}</a>
             </div>
         </>
     )
