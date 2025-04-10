@@ -1,3 +1,12 @@
+:root {
+  --text: #d3d3d3;
+  --background: #16151a;
+  --main: #282226;
+  --main-accent: #3e2d2e;
+  --second: #533e37;
+  --second-accent: #554f42;
+}
+
 @font-face {
   font-family: Noto Sans Display;
   src: url("./assets/NotoSansDisplay.ttf");
@@ -17,11 +26,10 @@
 }
 
 :root {
-  font-family: Noto Sans Display,Arial,sans-serif;
-  font-weight: 500;
+  font-family: Noto Sans Display, Arial, sans-serif;
   color-scheme: light dark;
   color: #FDF4EF;
-  background-color: #2c3343;
+  background: linear-gradient(var(--main), var(--background) 40%);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

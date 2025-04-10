@@ -2,36 +2,34 @@ import {useState} from 'react';
 import './App.css'
 
 function App() {
-    const [url, setUrl] = useState('')
-    const [result, setResult] = useState('')
+    const [url, setUrl] = useState('https://')
+    const [result, setResult] = useState('здесь будет ваша ссылка')
 
-    const onSubmit = async () => {
+    const onSubmit = async (_) => {
+        _.preventDefault();
         if (!url.trim()) return;
 
         const response = await fetch(
             '/gen',
             {
-                    method: "POST",
-                    body: JSON.stringify({"link": url}),
-                    headers: {'Content-Type': 'application/json'}
-                })
+                method: "POST",
+                body: JSON.stringify({"link": url}),
+                headers: {'Content-Type': 'application/json'}
+            })
         const data = await response.json()
-        setResult(`https://sh.osi.im/${data.uid}`)
+        setResult(`sh.osi.im/${data.uid}`)
 
     }
     return (
         <>
             <h1>Сокращатель ссылок</h1>
-            <form onSubmit={_ => {
-                _.preventDefault();
-                onSubmit()
-            }}>
-                <input type="text" value={url} onChange={e => setUrl(e.target.value)}/>
-                <input type="submit" value="SH.."/>
+            <form onSubmit={onSubmit}>
+                    <input type="text" id='url' aria-label="url" placeholder='https://' value={url} onChange={e => setUrl(e.target.value)}/>
+                    <input type="submit" value="Сократить"/>
             </form>
             <div className='result'>
-                <span>Сокращенный url: </span>
-                <a href={result}>{result}</a>
+                <span>Результат: </span>
+                <a href={url && result}>{result}</a>
             </div>
         </>
     )
